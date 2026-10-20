@@ -1,75 +1,47 @@
-# 📊 Proyecto RappiPlus: de datos a decisiones de negocio
+# 🚀 Proyecto Final Integrador: Analítica Avanzada de Clientes y Negocio en Telecomunicaciones
 
-## 🎯 Objetivo del Proyecto
-El objetivo principal de este proyecto es evaluar el desempeño del servicio **RappiPlus** para apoyar **decisiones de negocio basadas en datos** dentro del periodo registrado.
-
-A través de un enfoque analítico, el proyecto busca seguir una lógica clara y progresiva:
-* **Evaluar si podemos confiar en los datos** (análisis de calidad de datos en Python).
-* **Analizar si el negocio es rentable** (revenue, costos y profit).
-* **Entender dónde se pierden los usuarios** (funnel de conversión).
-* **Evaluar si los usuarios regresan** (retención por cohortes).
-* **Validar si los cambios generan impacto** (test estadístico con pruebas de hipótesis).
-* **Comunicar los resultados** (dashboard en herramientas de BI).
-
-A lo largo del proyecto, se transforman datos en insights para responder preguntas clave del negocio y proponer **recomendaciones accionables**.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SciPy / Stats](https://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white)
+[![GitHub Notebook](https://img.shields.io/badge/📖_Ver_Notebook-Online-blue?style=for-the-badge&logo=github)](./S12_Estudiante_Proyecto_Final.ipynb)
 
 ---
 
-## 💾 Datasets Utilizados
-El análisis se realiza mediante la integración y el procesamiento de múltiples fuentes de información del negocio:
+## 🏆 Resumen Ejecutivo del Proyecto Final
 
-1. **`rappiplus_orders_raw.csv`**: Información transaccional de pedidos, precios, descuentos y revenue.
-2. **`rappiplus_catalog.csv`**: Costos unitarios de productos, categorías y proveedores.
-3. **`rappiplus_marketing_spend.csv`**: Inversión en marketing segmentada por canal y país.
-4. **`events / users / user_activity (SQL)`**: Datos estructurados sobre el comportamiento del usuario dentro de la plataforma.
-5. **`experiment_checkout_ui.csv`**: Resultados de un experimento A/B aplicado en el proceso de pago (*checkout*).
+Este repositorio contiene mi **Proyecto Final Integrador**, desarrollado como la culminación y evaluación para la obtención de mi título como **Especialista en Datos**. 
+
+Se trata de un pipeline analítico de **alta prioridad y complejidad**, en el cual integré de manera transversal ingeniería de datos, consultas relacionales avanzadas con SQL, modelamiento y estructuración con Python, rigor estadístico y visualización estratégica para la toma de decisiones directivas en el sector de telecomunicaciones.
 
 ---
 
-## 🛠️ Etapas del Análisis Realizadas
+## 🛠️ Arquitectura de Habilidades y Competencias Técnicas Aplicadas
 
-### 1. Carga y Exploración Inicial
-* Importación del stack analítico esencial de Python (`pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy.stats`, `statsmodels`).
-* Auditoría estructural preliminar usando métodos de inspección dimensional (`.shape`, `.head()`, `.info()`) para validar la correcta lectura en memoria de los tipos de datos primarios y verificar valores nulos en los distintos datasets.
+El desarrollo de este proyecto integrador abarcó las siguientes dimensiones técnicas y de negocio:
 
-### 2. Identificación y Diagnóstico de Calidad de Datos
-* **Análisis de Ausencias y Anomalías:** Detección de registros con campos incompletos en variables categóricas (como `pais`, `dispositivo`, `fuente_referencia`, `nombre_producto`, `categoria_producto` y `canal`) y numéricas (`cantidad`, `precio_unitario`, `monto_descuento`).
-* **Detección de Valores Atípicos (*Outliers* y *Sentinels*):** Localización de anomalías numéricas graves, tales como cantidades negativas y valores extremadamente altos (ej. cantidades de `20000` o `10000` en los pedidos) que distorsionan las métricas estadísticas.
-* **Inconsistencias Categóricas:** Identificación de diferencias de formato y mayúsculas/minúsculas en variables geográficas (ej. `mexico`, `colombia`, `argentina` frente a sus versiones en mayúsculas).
-
-### 3. Limpieza, Imputación y Transformación
-* **Estandarización de Textos:** Normalización de la variable `pais` aplicando conversión a mayúsculas y limpieza de espacios en blanco en los datasets de órdenes y marketing.
-* **Conversión de Tipos de Datos:** Transformación de columnas de fechas almacenadas como texto (*object*) a formatos de fecha temporales (`datetime64`) utilizando `pd.to_datetime()`. Conversión de variables numéricas clave a tipos enteros.
-* **Tratamiento de Valores Nulos y Anomalías:** 
-  * Reemplazo estratégico de valores centinela extremos en `cantidad` mediante el uso de medidas de tendencia central robustas (como la mediana).
-  * Imputación de valores faltantes en variables categóricas con etiquetas descriptivas como `'NO INFORMADO'` o `'Desconocido'` para preservar la integridad de los registros sin sesgar las distribuciones analíticas.
- 
-### 3. Análisis del funnel de conversión con SQL
-* **Analizar el recorrido del usuario**
-* **Funnel completo**
-* **Detectar puntos de abandono**
-* **Identificación del mayor drop-off**
-
-### 4 Análisis de retención por cohortes con SQL
-* **Analizar comportamiento en el tiempo**
-* **Construir cohortes**
-* **Insight de retención**
-
-### 5 Evaluación de impacto (experimentación A/B) con Python
-* **Resultado del experimento**
-* **Recomendación.**
-
-### 6  Construcción del dashboard y comunicación de insights
-* **Traducir análisis en visualización.**
-* **Comunicar insights.**
+1. **Data Governance & Data Hygiene (Calidad y Reportes):** 
+   - Auditoría exhaustiva de fuentes, estructuración de esquemas y generación de reportes de calidad de datos para mitigar anomalías sistémicas.
+2. **Ingeniería y Transformación de Datos (Python):** 
+   - Preparación, estructuración y *data wrangling* avanzado con Pandas y NumPy para transformar datos crudos en *insights* de valor.
+3. **Analítica Financiera y de Negocio (SQL):** 
+   - Exploración y cálculo de **KPIs financieros** y análisis de comportamiento de los usuarios (**User Journeys**) mediante consultas relacionales complejas, agregaciones y cruces de múltiples tablas.
+4. **Análisis Estadístico Avanzado (Python & SciPy):** 
+   - Detección de patrones ocultos, tratamiento de valores atípicos (*outliers*), análisis de correlaciones e interconexiones de variables.
+   - **Validación de Hipótesis:** Pruebas estadísticas formales para contrastar y validar supuestos críticos de negocio.
+5. **Data Storytelling y Business Intelligence:** 
+   - Construcción de narrativas visuales claras con gráficos avanzados (Matplotlib/Seaborn) y diseño de **Dashboards Interactivos** orientados a *stakeholders* y toma de decisiones estratégicas.
 
 ---
 
-## 🚀 Cómo Ejecutar el Notebook
+## 📐 Estructura del Flujo Analítico
 
-Este entorno está configurado para ejecutarse de manera óptima utilizando **Google Colab** o un servidor **Jupyter Notebook** local.
-
-### Opción Recomendada: Google Colab
-1. Ve a [Google Colab](https://colab.research.google.com/).
-2. Selecciona la pestaña **Subir / Upload** y selecciona el archivo `.ipynb` de este repositorio.
-3. Los conjuntos de datos se cargan directamente mediante enlaces remotos seguros configurados en el código, por lo que no es estrictamente necesario subir archivos CSV de forma local a menos que se requiera evaluar fuentes personalizadas.
+```text
+├── 1. Ingesta y Limpieza          --> Aseguramiento de calidad y manejo de nulos/tipados.
+├── 2. Extracción SQL              --> Modelado de User Journeys y KPIs Financieros.
+├── 3. Estructuración con Python   --> Transformación, merge y preparación de datasets.
+├── 4. EDA y Análisis Estadístico  --> Detección de patrones, correlaciones y outliers.
+├── 5. Pruebas de Hipótesis        --> Validación cuantitativa de supuestos de negocio.
+└── 6. Storytelling & Dashboards   --> Presentación de hallazgos y visuales para ejecutivos.
